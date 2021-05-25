@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+    apispec:
+        container_name: apispec
+        image: swaggerapi/swagger-ui
+        volumes:
+            - ./docs/spec.json:/usr/share/nginx/html/spec.json
+        environment: 
+            API_URL: spec.json
+        ports:
+            - ${PORT}:8080
+        env_file: .env

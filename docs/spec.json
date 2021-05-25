@@ -1,0 +1,50 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Sample Title",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8080",
+            "description": "sample domain"
+        }
+    ],
+    "paths": {
+        "/cats": {
+            "get": {
+                "description": "cat取得API",
+                "responses": {
+                    "200": {
+                        "description": "成功",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "$ref": "#/components/schemas/Cat"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Cat": {
+                "properties": {
+                    "name": {
+                        "title": "名前",
+                        "type": "string",
+                        "example": "みけ"
+                    },
+                    "age": {
+                        "title": "歳",
+                        "type": "number",
+                        "example": 3
+                    }
+                }
+            }
+        }
+    }
+}
